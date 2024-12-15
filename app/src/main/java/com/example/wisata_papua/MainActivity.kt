@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.EditText
+import android.widget.ListView
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
@@ -12,7 +13,11 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.wisata_papua.databinding.ActivityMainBinding
+import com.example.wisata_papua.ui.home.CardAdapter
+import com.example.wisata_papua.ui.home.ItemData
 
 class MainActivity : AppCompatActivity() {
 
@@ -38,6 +43,28 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             invalidateOptionsMenu() // Refresh menu saat fragment berubah
         }
+
+
+//        Init recycle view
+        val recyclerView: RecyclerView = findViewById(R.id.list_card)
+        recyclerView.layoutManager= LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+
+//        Data untuk ditampilkan data ListView
+        val dataList = listOf(
+            ItemData(R.drawable.hero, "Pantai 1"),
+            ItemData(R.drawable.hero, "Pantai 2"),
+            ItemData(R.drawable.hero, "Pantai 3"),
+            ItemData(R.drawable.hero, "Pantai 4"),
+            ItemData(R.drawable.hero, "Pantai 4"),
+            ItemData(R.drawable.hero, "Pantai 4"),
+            ItemData(R.drawable.hero, "Pantai 4"),
+            ItemData(R.drawable.hero, "Pantai 4"),
+            ItemData(R.drawable.hero, "Pantai 4"),
+        )
+//        Membuat adapter
+        val adapter = CardAdapter(dataList)
+
+        recyclerView.adapter = adapter
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

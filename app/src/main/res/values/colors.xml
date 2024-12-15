@@ -6,6 +6,6 @@
     <color name="green_200">#4CAF50</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="white">#F9F9F9</color>
     <color name="colorActionBarBackground">#FF5722</color>
 </resources>
