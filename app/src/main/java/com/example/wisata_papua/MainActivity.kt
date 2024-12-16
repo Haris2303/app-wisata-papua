@@ -43,28 +43,6 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { _, destination, _ ->
             invalidateOptionsMenu() // Refresh menu saat fragment berubah
         }
-
-
-//        Init recycle view
-        val recyclerView: RecyclerView = findViewById(R.id.list_card)
-        recyclerView.layoutManager= LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
-
-//        Data untuk ditampilkan data ListView
-        val dataList = listOf(
-            ItemData(R.drawable.hero, "Pantai 1"),
-            ItemData(R.drawable.hero, "Pantai 2"),
-            ItemData(R.drawable.hero, "Pantai 3"),
-            ItemData(R.drawable.hero, "Pantai 4"),
-            ItemData(R.drawable.hero, "Pantai 4"),
-            ItemData(R.drawable.hero, "Pantai 4"),
-            ItemData(R.drawable.hero, "Pantai 4"),
-            ItemData(R.drawable.hero, "Pantai 4"),
-            ItemData(R.drawable.hero, "Pantai 4"),
-        )
-//        Membuat adapter
-        val adapter = CardAdapter(dataList)
-
-        recyclerView.adapter = adapter
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

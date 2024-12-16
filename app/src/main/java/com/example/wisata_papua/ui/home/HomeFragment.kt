@@ -10,6 +10,8 @@ import androidx.appcompat.widget.SearchView
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.wisata_papua.R
 import com.example.wisata_papua.databinding.FragmentHomeBinding
 
@@ -36,6 +38,27 @@ class HomeFragment : Fragment() {
 //        homeViewModel.text.observe(viewLifecycleOwner) {
 //            textView.text = it
 //        }
+
+        //        Init recycle view
+        val recyclerView: RecyclerView = binding.listCard
+        recyclerView.layoutManager= LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+
+//        Data untuk ditampilkan data ListView
+        val dataList = listOf(
+            ItemData(R.drawable.hero, "Pantai 1"),
+            ItemData(R.drawable.hero, "Pantai 2"),
+            ItemData(R.drawable.hero, "Pantai 3"),
+            ItemData(R.drawable.hero, "Pantai 4"),
+            ItemData(R.drawable.hero, "Pantai 4"),
+            ItemData(R.drawable.hero, "Pantai 4"),
+            ItemData(R.drawable.hero, "Pantai 4"),
+            ItemData(R.drawable.hero, "Pantai 4"),
+            ItemData(R.drawable.hero, "Pantai 4"),
+        )
+//        Membuat adapter
+        val adapter = CardAdapter(dataList)
+
+        recyclerView.adapter = adapter
 
         return root
     }
