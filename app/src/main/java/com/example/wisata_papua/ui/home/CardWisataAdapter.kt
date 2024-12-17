@@ -1,5 +1,7 @@
 package com.example.wisata_papua.ui.home
 
+import android.content.Context
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -8,9 +10,10 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.wisata_papua.DetailActivity
 import com.example.wisata_papua.R
 
-class CardWisataAdapter(private val dataList: List<ItemDataWisata>):
+class CardWisataAdapter(private val context: Context, private val dataList: List<ItemDataWisata>):
     RecyclerView.Adapter<CardWisataAdapter.ViewHolder>(){
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
@@ -33,6 +36,9 @@ class CardWisataAdapter(private val dataList: List<ItemDataWisata>):
         holder.subtitleTextView.text = item.subtitle
         holder.priceTextView.text = item.price
         holder.detailButton.setOnClickListener {
+            val intent = Intent(context, DetailActivity::class.java)
+            intent.putExtra("TITLE", item.title)
+            context.startActivity(intent)
             Log.i("BUTTON DETAIL", "Tombol detail ditekan!")
         }
     }
