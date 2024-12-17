@@ -1,5 +1,6 @@
 package com.example.wisata_papua.ui.home
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -102,7 +103,7 @@ class HomeFragment : Fragment() {
         recyclerView.setHasFixedSize(true)
 
         // Membuat adapter
-        val adapter = CardWisataAdapter(dataList)
+        val adapter = CardWisataAdapter(requireContext(), dataList)
 
         recyclerView.adapter = adapter
     }
