@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">wisata-papua</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_dashboard">Favorite</string>
+    <string name="title_notifications">Settings</string>
+    <string name="hero_title">Selamat Datang Di Wisata Papua</string>
 </resources>
